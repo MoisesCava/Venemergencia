@@ -1,0 +1,304 @@
+.section {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(105, 123, 231, 1) 20%, rgba(86, 68, 153, 1) 100%);
+    border-radius: 0 0 50% 50%/0 0 20% 20%;
+}
+
+.content {
+    position: relative;
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+.section .content h2 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 1.8em;
+}
+
+.section .content p {
+    color: #fff;
+    font-size: 1em;
+}
+
+.appbar {
+    background: transparent;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+}
+
+
+.bar-btn {
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+@media (max-width: 700) {
+    .bar-btn {
+        display: block;
+    }
+}
+
+.appbar .appbar-item {
+    padding-top: 50px;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 250px;
+}
+
+.appbar>*:nth-child(1) {
+    padding-top: 50px;
+    padding-left: 80px;
+    align-self: flex-start;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: 250px;
+}
+
+
+
+.appbar>*:nth-child(3) {
+    padding-top: 50px;
+    padding-right: 80px;
+    align-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: 250px;
+}
+
+.appbar-item a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+}
+
+.appbar-item-grow {
+    flex-grow: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-container {
+    position: relative;
+    display: inlin-block;
+    width: 50vw;
+    height: 50vw;
+    margin: 5vw auto;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+
+
+
+.card {
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    border-radius: 1em;
+    margin: 8vw 2.5vw;
+    background-color: #4d79ff;
+    overflow: hidden;
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    background: #1a53ff;
+    border-radius: 50% 10000% 50% 0%;
+    box-sizing: border-box;
+    border-left: 0px solid #1a53ff;
+    border-right: 0px solid #1a53ff;
+    margin: 2vw 3vw;
+    transform: rotate(315deg);
+}
+
+.title:before {
+    float: right;
+    font-family: 'ARIAL';
+    content: "CREDIT CARD";
+    color: #fff;
+    font-size: 3vw;
+    font-weight: bold;
+    margin: 6%;
+    clear: both;
+}
+
+.chip {
+    position: relative;
+    background-color: #ffcc00;
+    width: 14%;
+    height: 17%;
+    border-radius: 15%;
+    margin: 20% 0 0 7%;
+}
+
+.chip-lines {
+    position: absolute;
+    background-color: #de9703;
+    width: 2vw;
+}
+
+.chip-lines-center {
+    position: absolute;
+    background-color: #de9703;
+    height: 3.5vw;
+}
+
+.line-left1 {
+    position: absolute;
+    top: 1vw;
+    right: 0;
+    height: 0.5vw;
+}
+
+.line-left2 {
+    position: absolute;
+    top: 3vw;
+    right: 0;
+    height: 0.5vw;
+}
+
+.center-line-left {
+    position: absolute;
+    top: 0.5vw;
+    left: 2vw;
+    width: 0.5vw;
+}
+
+.center-line-right {
+    position: absolute;
+    top: 0.5vw;
+    right: 2vw;
+    width: 0.5vw;
+}
+
+.line-right1 {
+    position: absolute;
+    top: 1vw;
+    height: 0.5vw;
+}
+
+.line-right2 {
+    position: absolute;
+    top: 3vw;
+    height: 0.5vw;
+}
+
+.number:before {
+    position: absolute;
+    font-family: 'Dosis', sans-serif;
+    content: "0000 0000 0000 0000";
+    font-size: 3vw;
+    color: white;
+    margin: 2vw 3vw;
+    letter-spacing: 0.6vw;
+}
+
+.valid-dates:after {
+    position: absolute;
+    width: 1vw;
+    font-family: 'Dosis', sans-serif;
+    content: "VALID THRU";
+    font-size: 1vw;
+    color: white;
+    margin: 7vw 20vw;
+    letter-spacing: 0.6vw;
+}
+
+.valid-dates-icon:after {
+    position: absolute;
+    content: " ";
+    border-style: solid;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: .7vw 0 .7vw 1.4vw;
+    border-color: transparent transparent transparent white;
+    margin: 7.3vw 25.7vw;
+}
+
+.valid-dates-date:after {
+    position: absolute;
+    width: 1vw;
+    font-family: 'Dosis', sans-serif;
+    content: "00/00";
+    font-size: 2.5vw;
+    color: white;
+    margin: 6.7vw 28vw;
+}
+
+.name:after {
+    position: absolute;
+    font-family: 'ARIAL';
+    content: "FULANO'S NAME DA SILVA";
+    font-size: 2vw;
+    color: white;
+    margin: 10.6vw 3vw;
+}
