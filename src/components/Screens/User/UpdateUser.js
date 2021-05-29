@@ -1,8 +1,9 @@
 import React from 'react'
+import UpdateForm from '../../Organism/User/UpdateForm'
 
 const UpdateUser = () => {
     return (
-        <h1>Hola Update</h1>
+        <UpdateForm />
     )
 }
 

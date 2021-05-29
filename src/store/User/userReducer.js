@@ -19,7 +19,17 @@ const initialState = {
 
 }
 
+
+
+
 const userReducer = (state = initialState, action) => {
+    
+    const update = () => {
+    
+        Object.assign(state.users.find(user => user.id === action.updatedUser.id), action.updatedUser)
+        
+        return state.users
+    }
 
     switch (action.type) {
 
@@ -56,8 +66,15 @@ const userReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: null,
-                updatedUser: action.updatedUser
+                users: update()
             }
+        // case USER_UPDATE:
+        //     return {
+        //         ...state,
+        //         loading: false,
+        //         error: null,
+        //         updatedUser: action.updatedUser
+        //     }
 
         case DELETE_USER:
             return {

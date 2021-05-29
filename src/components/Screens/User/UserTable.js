@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { makeStyles } from '@material-ui/core';
 import CreateIcon from '@material-ui/icons/Create';
@@ -13,11 +13,13 @@ import { useDispatch, useSelector } from "react-redux";
 import * as userActions from '../../../store/User/userActions'
 
 import ConfirmationModal from '../../Molecule/Modals/ConfirmationModal'
+import Background from '../../Atom/Layout/Background';
+import ActionButton from '../../Atom/Buttons/ActionButton';
 
 
 const useStyles = makeStyles((theme) => ({
     content: {
-        marginTop: '80px',
+        paddingTop: '80px',
     },
 
     paper: {
@@ -25,6 +27,11 @@ const useStyles = makeStyles((theme) => ({
         margin: 'auto',
         maxWidth: "90%",
     },
+
+    button: {
+        width: "40%",
+        marginTop: 20
+    }
 }));
 
 const UserTable = ({ history, match }) => {
@@ -33,7 +40,7 @@ const UserTable = ({ history, match }) => {
 
     const dispatch = useDispatch()
     const users = useSelector(state => state.user.users)
-    const currentUserId = useSelector(state=> state.user.currentUserId)
+    const currentUserId = useSelector(state => state.user.currentUserId)
     const [openDelete, setOpenDelete] = useState(false);
 
     const columns = [
@@ -44,10 +51,19 @@ const UserTable = ({ history, match }) => {
     ]
 
     useEffect(() => {
-        dispatch(userActions.setUsers());
-    }, [dispatch])
 
-    console.log(users)
+        const setUsers = () => {
+            if (users.length > 0) {
+                return users
+            } else dispatch(userActions.setUsers());
+        }
+
+        setUsers()
+
+    }, [dispatch, users])
+
+
+
 
     const renderButtons = (id) => {
 
@@ -62,7 +78,10 @@ const UserTable = ({ history, match }) => {
     }
 
     return (
-        <Fragment>
+        <Background>
+            <div style={{ width: "100%", textAlign: "center"}} className={classes.content}>
+                <ActionButton onClick={() => history.push('/')} variant={"contained"} rounded color="primary" className={classes.button}>Pagina principal</ActionButton>
+            </div>
             {
                 users?.length > 0 ?
                     <CommonTable items={createColumnData(users, columns)} render={renderButtons} />
@@ -73,7 +92,7 @@ const UserTable = ({ history, match }) => {
 
             <ConfirmationModal isLoading={users.loading} title={"Eliminar Usuario"} open={openDelete} onClose={() => { setOpenDelete(!openDelete); }} onOk={() => { dispatch(userActions.deleteUser(currentUserId)); setOpenDelete(!openDelete); }} />
 
-        </Fragment>
+        </Background>
     )
 }
 

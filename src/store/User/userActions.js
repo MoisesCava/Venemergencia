@@ -1,4 +1,5 @@
 import API from '../../config/backApi';
+import { goBack } from 'connected-react-router';
 
 export const USER_STARTED = 'USER_STARTED';
 export const USER_ERROR = 'USER_ERROR';
@@ -49,9 +50,10 @@ export const updateUser = (user, id) => {
         try {
 
             dispatch({ type: USER_STARTED });
-            await API.put(`/users/${id}`, user);
+            const response = await API.put(`/users/${id}`, user);
+            console.log(response);
             dispatch({ type: USER_UPDATE, updatedUser: user });
-
+            dispatch(goBack());
         } catch (error) {
             console.error(error);
             dispatch({ type: USER_ERROR, error: "No se pudo actualizar el usuario" });
@@ -66,7 +68,8 @@ export const deleteUser = (id) => {
     return async dispatch=> {
         try {
             dispatch({ type: USER_STARTED });
-            await API.delete(`/users/${id}`);
+            const response = await API.delete(`/users/${id}`);
+            console.log(response);
             dispatch({ type: DELETE_USER, currentUserId: id });
 
         } catch (error) {
