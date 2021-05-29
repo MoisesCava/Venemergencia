@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="docs\asistensi-logo.png" alt="Project logo"></a>
+ <img width=200px height=200px src="doc\asistensi-logo.png" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Prueba tecnica - Venemergencia</h3>
@@ -54,10 +54,10 @@ npm start
 ```
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-Aqui va el general de que usaste para contruir la apliacion 
-- [Material-UI](https://material-ui.com/) - Libreria?
-- [React](https://es.reactjs.org/) - Web Framework
+
+- [Material-UI](https://material-ui.com/) - Framework
+- [ReactJs](https://es.reactjs.org/) - Library
 
 ## ✍️ Authors <a name = "authors"></a>
 
-Aqui va tu info. Puedes poner el enlace a tu perfil de Linkedin [Moises](https://www.linkedin.com/in/mois%C3%A9s-escudero-cavalieri-978a341b2/)
+[Moises](https://www.linkedin.com/in/mois%C3%A9s-escudero-cavalieri-978a341b2/)
