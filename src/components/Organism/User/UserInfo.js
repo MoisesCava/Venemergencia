@@ -49,7 +49,7 @@ const UserInfo = () => {
                 direction="row"
                 alignItems="center"
                 justify="center"
-                style={{ minHeight: "80vh" }}
+                style={{ minHeight: "100vh" }}
             >
                 <Card >
                     <CardContent>
