@@ -4,10 +4,33 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+import User from './store/User/userReducer';
+
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import ReduxThunk from 'redux-thunk';
+import { connectRouter, routerMiddleware, ConnectedRouter } from 'connected-react-router'
+import { createBrowserHistory } from 'history'
+
+export const history = createBrowserHistory();
+
+const rootReducer = combineReducers({
+  user: User,
+  router: connectRouter(history),
+})
+
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk, routerMiddleware(history)));
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+  <Provider store={store}>
+    <ConnectedRouter history={history} >
+      <App />
+    </ConnectedRouter>
+  </Provider>
+  ,
   document.getElementById('root')
 );
 
