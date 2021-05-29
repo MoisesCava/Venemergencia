@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="doc\asistensi-logo.png" alt="Project logo"></a>
+ <img width=200px height=200px src="src\doc\asistensi-logo.png" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Prueba tecnica - Venemergencia</h3>
@@ -8,7 +8,6 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![Bugs](https://img.shields.io/badge/bugs-1-important.svg)]()
 [![Axios](https://img.shields.io/badge/axios-0.21.1-blue.svg)]()
 [![React-Hook-Forms](https://img.shields.io/badge/react--hook--form-6.15.5-blue.svg)]()
 [![Redux](https://img.shields.io/badge/redux-4.0.5-blue.svg)]()
