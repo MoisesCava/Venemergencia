@@ -1,4 +1,4 @@
-const notAStringMessage = "Por favor ingrese un String valido"
+    const notAStringMessage = "Por favor ingrese un String valido"
     const NOT_A_STRING = 'NOT_A_STRING';
     const NOT_A_NUMBER = 'NOT_A_NUMBER';
     const NO_LETTER = 'NO_LETTER';
@@ -29,392 +29,73 @@ const notAStringMessage = "Por favor ingrese un String valido"
     ]
 
 
-    useEffect(() => {
+    
 
 
-        const isValid = (value, opt) => {
+    const isValid = (value, opt) => {
 
-            switch (opt) {
+        switch (opt) {
 
-                case NOT_A_STRING:
+            case NOT_A_STRING:
 
-                    if (typeof value !== "string") { return false }
-                    break;
+                if (typeof value !== "string") { return false }
+                break;
 
-                case NOT_A_NUMBER:
+            case NOT_A_NUMBER:
 
-                    if (typeof value !== "number") { return false }
-                    break;
+                if (typeof value !== "number") { return false }
+                break;
 
-                case ZERO_LENGTH:
+            case ZERO_LENGTH:
 
-                    if (value.length === 0) { return false }
-                    break;
+                if (value.length === 0) { return false }
+                break;
 
-                case NO_LETTER:
+            case NO_LETTER:
 
-                    if (/[a-zA-Z]/.test(value) === false) { return false }
-                    break;
+                if (/[a-zA-Z]/.test(value) === false) { return false }
+                break;
 
-                case EMPTY_ARRAY:
+            case EMPTY_ARRAY:
 
-                    if (value.length === 0) { return false }
-                    break;
+                if (value.length === 0) { return false }
+                break;
 
-                case NOT_ARRAY:
+            case NOT_ARRAY:
 
-                    if (!Array.isArray(value)) { return false }
-                    break;
+                if (!Array.isArray(value)) { return false }
+                break;
 
-                case NUMERIC_ARRAY:
+            case NUMERIC_ARRAY:
 
-                    if (value.some(isNaN)) { return false }
-                    break;
+                if (value.some(isNaN)) { return false }
+                break;
 
-                case OBJECT_ARRAY:
+            case OBJECT_ARRAY:
 
-                    if (!value.every(element => typeof element === 'object')) { return false }
-                    break;
+                if (!value.every(element => typeof element === 'object')) { return false }
+                break;
 
-                case NOT_FUNCTION:
+            case NOT_FUNCTION:
 
-                    if ( typeof value !== 'function') { return false }
+                if ( typeof value !== 'function') { return false }
 
-                    break;
+                break;
 
 
-                default:
-                    break;
-            }
-
-            return true
+            default:
+                break;
         }
 
+        return true
+    }
 
 
-        //Ejercicio 1
-        const filterByValue = (arr, key) => {
 
-            if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY)))
+    //Ejercicio 1
+    const filterByValue = (arr, key) => {
 
-                return validArrayMessage;
-
-            else if (!isValid(key, NOT_A_STRING))
-
-                return notAStringMessage;
-
-            else {
-                return arr.filter(catsOwner => catsOwner.hasOwnProperty(key) !== false);
-            }
-
-        };
-
-        console.log(filterByValue(catsOwners, 'isCatOwner'));
-
-
-        //Ejercicio 2
-
-        const find = (arr, searchValue) => {
-
-            if (!(isValid(arr, EMPTY_ARRAY))) {
-
-                return validArrayMessage;
-
-            } else return arr.find(number => number === searchValue ? number : undefined);
-        };
-
-        console.log(find(numericArray, 3));
-        console.log(find(numericArray, 10));
-
-
-
-        //Ejercicio 3
-
-        const findInObj = (arr, key, searchValue) => {
-
-            if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY)))
-
-                return validArrayMessage;
-
-            else if (!isValid(key, NOT_A_STRING))
-
-                return notAStringMessage;
-
-            else {
-                return arr.find(obj => obj[key] && obj[key] === searchValue);
-            }
-
-
-
-        };
-
-        console.log(findInObj(catsOwners, 'isCatOwner', true));
-
-
-
-        //Ejercicio 4
-
-        const removeVowels = (str) => {
-
-            const valid = /[aeiouAEIOU]+?/g;
-
-            if (!isValid(str, NOT_A_STRING))
-
-                return notAStringMessage;
-
-            else {
-
-                let onlyVowels = str.replace(valid, '').toLowerCase();
-
-                return onlyVowels;
-
-            }
-
-
-
-        }
-
-        console.log(removeVowels('Elie'));
-        console.log(removeVowels('TIM'));
-        console.log(removeVowels('ZZZZZZ'));
-
-        //Ejercicio 5
-
-        const doubleOddNumbers = (arr) => {
-
-            if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, NOT_ARRAY)))
-
-                return validArrayMessage;
-
-            else return arr.filter(number => number % 2 === 1).map(number => number * 2);
-
-        };
-
-        console.log(doubleOddNumbers(numericArray));
-        console.log(doubleOddNumbers([4, 4, 4, 4]));
-
-
-
-
-        //Ejercicio 4 repetido
-
-        const removeVowelsUpperCase = (str) => {
-
-            const valid = /[aeiouAEIOU]+?/g;
-
-            if (!isValid(str, NOT_A_STRING))
-
-                return notAStringMessage;
-
-            else {
-
-                let onlyVowels = str.replace(valid, '').toUpperCase();
-
-                return onlyVowels;
-
-            }
-
-
-
-
-
-        }
-
-        console.log(removeVowelsUpperCase('Elie'));
-        console.log(removeVowelsUpperCase('TIM'));
-        console.log(removeVowelsUpperCase('ZZZZZZ'));
-
-
-
-
-        //Ejercicio 6
-
-        const extractKey = (arr, key) => {
-
-            if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY)))
-
-                return validArrayMessage;
-
-            else if (!isValid(key, NOT_A_STRING))
-
-                return notAStringMessage;
-
-            else {
-                return arr.map((obj) => obj[key]);
-            }
-
-        }
-
-        console.log(extractKey(namesArray, 'name'));
-
-
-
-
-
-
-
-        //Ejercicio 7
-
-
-
-        const vowelCount = (str) => {
-
-            const valid = /[aeiouAEIOU]+?/g;
-
-
-
-
-            if (!isValid(str, NOT_A_STRING))
-
-                return notAStringMessage;
-
-            else {
-
-                let onlyVowels = str.match(valid);
-
-                if (onlyVowels) {
-                    return onlyVowels.reduce((result, letter) => {
-
-                        typeof result[letter.toLowerCase()] === 'undefined' ?
-                            result[letter.toLowerCase()] = 1
-
-                            :
-
-                            result[letter.toLowerCase()] += 1;
-
-
-                        return result;
-
-
-                    }, {})
-                } else {
-                    return {}
-                }
-
-            }
-
-        }
-
-
-
-
-
-        console.log(vowelCount('Elie')) // {e:2,i:1};
-        console.log(vowelCount('Tim'));  // {i:1};
-        console.log(vowelCount('Matt'));  // {a:1})
-        console.log(vowelCount('hmmm'));  // {};
-        console.log(vowelCount('I Am awesome and so are you'));  // {i: 1, a: 4, e: 3, o: 3, u: 1};
-        console.log(vowelCount(1))
-
-
-
-
-        // Ejercicio 8  Es un array numerico?
-
-        const hasNoDuplicates = (arr) => {
-
-            if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, NOT_ARRAY) && isValid(arr, NUMERIC_ARRAY))) {
-
-                return validArrayMessage;
-
-            } else {
-
-                let duplicate = true
-
-                const tempArray = [...arr].sort()
-
-                for (let i = 0; i < tempArray.length; i++) {
-                    if (tempArray[i + 1] === tempArray[i]) {
-                        duplicate = false
-                    }
-                }
-
-                return duplicate;
-
-            }
-
-
-
-
-        }
-
-        console.log(hasNoDuplicates([1, 1, 2, 3, 2]));
-        console.log(hasNoDuplicates([1, 2, 3]));
-
-
-
-
-
-        // Eejercicio 9
-
-        const addKeyAndValue = (arr, key, value) => {
-
-            if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY)))
-
-                return validArrayMessage;
-
-            else if (!isValid(key, NOT_A_STRING))
-
-                return notAStringMessage;
-
-            else {
-                return arr.map(person => ({ ...person, [key]: value }));
-            }
-
-        }
-
-        console.log(addKeyAndValue(namesArray, 'title', 'Instructor'));
-
-
-        // Ejercicio 10
-        function isEven(val) {
-
-            return val % 2 === 0;
-
-        }
-
-        var arr = [1, 2, 3, 4, 5, 6, 7, 8];
-
-        function isLongerThanThreeCharacters(val) {
-
-            return val.length > 3;
-        }
-
-        var names = ['Elie', 'Colt', 'Tim', 'Matt'];
-
-        const partition = (arr, callback) => {
-
-            if (!isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY))
-
-                return validArrayMessage;
-
-            else if (!isValid(callback, NOT_FUNCTION))
-
-                return notAFunctionMessage;
-
-            else return arr.reduce((result, element) => { callback(element) ? result[0].push(element) : result[1].push(element); return result }, [[], []]);
-            
-
-        }
-
-        console.log(partition(arr, isEven));
-        console.log(partition(names, isLongerThanThreeCharacters));
-
-
-
-
-        // Ejercicio 11
-
-        var namesWithTittle = [
-            { title: "Instructor", first: 'Elie', last: "Schoppik" },
-            { title: "Instructor", first: 'Tim', last: "Garcia", isCatOwner: true },
-            { title: "Instructor", first: 'Matt', last: "Lane" },
-            { title: "Instructor", first: 'Colt', last: "Steele", isCatOwner: true }
-        ]
-
-        const hasCertainKey = (arr, key) => {
-
-            if (!isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY))
+        if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY)))
 
             return validArrayMessage;
 
@@ -422,9 +103,328 @@ const notAStringMessage = "Por favor ingrese un String valido"
 
             return notAStringMessage;
 
-        else return arr.every(obj => obj.hasOwnProperty(key) ? true : false)
+        else {
+            return arr.filter(catsOwner => catsOwner.hasOwnProperty(key) !== false);
+        }
+
+    };
+
+    console.log(filterByValue(catsOwners, 'isCatOwner'));
+
+
+    //Ejercicio 2
+
+    const find = (arr, searchValue) => {
+
+        if (!(isValid(arr, EMPTY_ARRAY))) {
+
+            return validArrayMessage;
+
+        } else return arr.find(number => number === searchValue ? number : undefined);
+    };
+
+    console.log(find(numericArray, 3));
+    console.log(find(numericArray, 10));
+
+
+
+    //Ejercicio 3
+
+    const findInObj = (arr, key, searchValue) => {
+
+        if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY)))
+
+            return validArrayMessage;
+
+        else if (!isValid(key, NOT_A_STRING))
+
+            return notAStringMessage;
+
+        else {
+            return arr.find(obj => obj[key] && obj[key] === searchValue);
+        }
+
+
+
+    };
+
+    console.log(findInObj(catsOwners, 'isCatOwner', true));
+
+
+
+    //Ejercicio 4
+
+    const removeVowels = (str) => {
+
+        const valid = /[aeiouAEIOU]+?/g;
+
+        if (!isValid(str, NOT_A_STRING))
+
+            return notAStringMessage;
+
+        else {
+
+            let onlyVowels = str.replace(valid, '').toLowerCase();
+
+            return onlyVowels;
 
         }
 
-        console.log(hasCertainKey(namesWithTittle, 'first'));
-        console.log(hasCertainKey(namesWithTittle, 'isCatOwner'));
+
+
+    }
+
+    console.log(removeVowels('Elie'));
+    console.log(removeVowels('TIM'));
+    console.log(removeVowels('ZZZZZZ'));
+
+    //Ejercicio 5
+
+    const doubleOddNumbers = (arr) => {
+
+        if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, NOT_ARRAY)))
+
+            return validArrayMessage;
+
+        else return arr.filter(number => number % 2 === 1).map(number => number * 2);
+
+    };
+
+    console.log(doubleOddNumbers(numericArray));
+    console.log(doubleOddNumbers([4, 4, 4, 4]));
+
+
+
+
+    //Ejercicio 4 repetido
+
+    const removeVowelsUpperCase = (str) => {
+
+        const valid = /[aeiouAEIOU]+?/g;
+
+        if (!isValid(str, NOT_A_STRING))
+
+            return notAStringMessage;
+
+        else {
+
+            let onlyVowels = str.replace(valid, '').toUpperCase();
+
+            return onlyVowels;
+
+        }
+
+
+
+
+
+    }
+
+    console.log(removeVowelsUpperCase('Elie'));
+    console.log(removeVowelsUpperCase('TIM'));
+    console.log(removeVowelsUpperCase('ZZZZZZ'));
+
+
+
+
+    //Ejercicio 6
+
+    const extractKey = (arr, key) => {
+
+        if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY)))
+
+            return validArrayMessage;
+
+        else if (!isValid(key, NOT_A_STRING))
+
+            return notAStringMessage;
+
+        else {
+            return arr.map((obj) => obj[key]);
+        }
+
+    }
+
+    console.log(extractKey(namesArray, 'name'));
+
+
+
+
+
+
+
+    //Ejercicio 7
+
+
+
+    const vowelCount = (str) => {
+
+        const valid = /[aeiouAEIOU]+?/g;
+
+
+
+
+        if (!isValid(str, NOT_A_STRING))
+
+            return notAStringMessage;
+
+        else {
+
+            let onlyVowels = str.match(valid);
+
+            if (onlyVowels) {
+                return onlyVowels.reduce((result, letter) => {
+
+                    typeof result[letter.toLowerCase()] === 'undefined' ?
+                        result[letter.toLowerCase()] = 1
+
+                        :
+
+                        result[letter.toLowerCase()] += 1;
+
+
+                    return result;
+
+
+                }, {})
+            } else {
+                return {}
+            }
+
+        }
+
+    }
+
+
+
+
+
+    console.log(vowelCount('Elie')) // {e:2,i:1};
+    console.log(vowelCount('Tim'));  // {i:1};
+    console.log(vowelCount('Matt'));  // {a:1})
+    console.log(vowelCount('hmmm'));  // {};
+    console.log(vowelCount('I Am awesome and so are you'));  // {i: 1, a: 4, e: 3, o: 3, u: 1};
+    console.log(vowelCount(1))
+
+
+
+
+    // Ejercicio 8  Es un array numerico?
+
+    const hasNoDuplicates = (arr) => {
+
+        if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, NOT_ARRAY) && isValid(arr, NUMERIC_ARRAY))) {
+
+            return validArrayMessage;
+
+        } else {
+
+            let duplicate = true
+
+            const tempArray = [...arr].sort()
+
+            for (let i = 0; i < tempArray.length; i++) {
+                if (tempArray[i + 1] === tempArray[i]) {
+                    duplicate = false
+                }
+            }
+
+            return duplicate;
+
+        }
+
+
+
+
+    }
+
+    console.log(hasNoDuplicates([1, 1, 2, 3, 2]));
+    console.log(hasNoDuplicates([1, 2, 3]));
+
+
+
+
+
+    // Eejercicio 9
+
+    const addKeyAndValue = (arr, key, value) => {
+
+        if (!(isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY)))
+
+            return validArrayMessage;
+
+        else if (!isValid(key, NOT_A_STRING))
+
+            return notAStringMessage;
+
+        else {
+            return arr.map(person => ({ ...person, [key]: value }));
+        }
+
+    }
+
+    console.log(addKeyAndValue(namesArray, 'title', 'Instructor'));
+
+
+    // Ejercicio 10
+    function isEven(val) {
+
+        return val % 2 === 0;
+
+    }
+
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+    function isLongerThanThreeCharacters(val) {
+
+        return val.length > 3;
+    }
+
+    var names = ['Elie', 'Colt', 'Tim', 'Matt'];
+
+    const partition = (arr, callback) => {
+
+        if (!isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY))
+
+            return validArrayMessage;
+
+        else if (!isValid(callback, NOT_FUNCTION))
+
+            return notAFunctionMessage;
+
+        else return arr.reduce((result, element) => { callback(element) ? result[0].push(element) : result[1].push(element); return result }, [[], []]);
+        
+
+    }
+
+    console.log(partition(arr, isEven));
+    console.log(partition(names, isLongerThanThreeCharacters));
+
+
+
+
+    // Ejercicio 11
+
+    var namesWithTittle = [
+        { title: "Instructor", first: 'Elie', last: "Schoppik" },
+        { title: "Instructor", first: 'Tim', last: "Garcia", isCatOwner: true },
+        { title: "Instructor", first: 'Matt', last: "Lane" },
+        { title: "Instructor", first: 'Colt', last: "Steele", isCatOwner: true }
+    ]
+
+    const hasCertainKey = (arr, key) => {
+
+        if (!isValid(arr, EMPTY_ARRAY) && isValid(arr, OBJECT_ARRAY))
+
+        return validArrayMessage;
+
+    else if (!isValid(key, NOT_A_STRING))
+
+        return notAStringMessage;
+
+    else return arr.every(obj => obj.hasOwnProperty(key) ? true : false)
+
+    }
+
+    console.log(hasCertainKey(namesWithTittle, 'first'));
+    console.log(hasCertainKey(namesWithTittle, 'isCatOwner'));
