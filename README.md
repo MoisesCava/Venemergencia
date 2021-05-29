@@ -1,74 +1,69 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="src\doc\asistensi-logo.png" alt="Project logo"></a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3 align="center">Prueba tecnica - Venemergencia</h3>
 
-## Available Scripts
+<div align="center">
 
-In the project directory, you can run:
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![Axios](https://img.shields.io/badge/axios-0.21.1-blue.svg)]()
+[![React-Hook-Forms](https://img.shields.io/badge/react--hook--form-6.15.5-blue.svg)]()
+[![Redux](https://img.shields.io/badge/redux-4.0.5-blue.svg)]()
+[![Redux-Thunk](https://img.shields.io/badge/redux--thunk-2.3.0-blue.svg)]()
+[![Material-UI](https://img.shields.io/badge/material--ui-4.11.3-blue.svg)]()
+[![Dependencias](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)](#about)
 
-### `yarn start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align="center"> Venemergencia
+    <br> 
+</p>
 
-### `yarn test`
+## 📝 Table of Contents
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Built Using](#built_using)
+- [Authors](#authors)
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧐 About <a name = "about"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Prueba tecnica para optar al cargo de desarrollador Front-end (React).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+La prueba consta de 3 partes:
 
-### `yarn eject`
+Parte 1: Disponible dentro del repositorio en la carpera src/doc o dentro de la aplicacion en el home haciendo click sobre "Parte 1".
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Parte 2: Ubicada en el home de la aplicacion ("/").
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Parte 3: Disponible dentro de la aplicacion en el home haciendo click sobre "Parte 3".
+## 🏁 Getting Started <a name = "getting_started"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Installing
 
-## Learn More
+Paso 1
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Paso 2
 
-### Code Splitting
+```
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ⛏️ Built Using <a name = "built_using"></a>
 
-### Analyzing the Bundle Size
+- [Material-UI](https://material-ui.com/) - Framework
+- [ReactJs](https://es.reactjs.org/) - Library
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## ✍️ Authors <a name = "authors"></a>
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# Venemergencia
->>>>>>> 1cde40efc746b8a37664e918b6218040352e9e6e
+[Moises](https://www.linkedin.com/in/mois%C3%A9s-escudero-cavalieri-978a341b2/)
