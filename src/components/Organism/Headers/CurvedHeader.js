@@ -13,10 +13,13 @@ const CurvedHeader = () => {
 
                 <div className="content" >
                     <Title>
-                        Be Smart Take Card
+                        Prueba tecnica
                     </Title>
                     <Content>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec aliquet leo, vel laoreet leo. Donec ut viverra turpis. Curabitur commodo.
+                        Parte 2 <br/>
+                        Descripcion: <br/>
+                        Esta es una landing page hecha sin libreria de 3eros. <br/>
+                        Los enlaces a las otras partes de la prueba estan en la parte superior derecha de esta pagina
                     </Content>
                 </div>
             </section>

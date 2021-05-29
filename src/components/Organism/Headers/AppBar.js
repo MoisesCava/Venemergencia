@@ -29,7 +29,7 @@ const AppBar = () => {
 
 
                 <div className="appbar-item">
-                    <a href="src\doc\test_respuestas.txt" target="_blank" rel="noreferrer">Part 1</a>
+                    <Link to="/Code"> Parte 1 </Link>
                     <Link to="/Users"> Parte 3 </Link>
                 </div>
 
