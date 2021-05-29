@@ -1,8 +1,7 @@
 import React from 'react'
 import './CurvedHeader'
 import visa from "../../../assets/visa.png"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+
 
 const AppBar = () => {
     return (

@@ -21,34 +21,7 @@ const CurvedHeader = () => {
                 </div>
             </section>
 
-            <div class="card">
-                <div class="title">
-                </div>
-                <div class="chip">
-                    <div class="chip-lines line-left1">
-                    </div>
-                    <div class="chip-lines line-left2">
-                    </div>
-                    <div class="chip-lines-center center-line-left">
-                    </div>
-                    <div class="chip-lines-center center-line-right">
-                    </div>
-                    <div class="chip-lines line-right1">
-                    </div>
-                    <div class="chip-lines line-right2">
-                    </div>
-                </div>
-                <div class="number">
-                </div>
-                <div class="valid-dates">
-                </div>
-                <div class="valid-dates-icon">
-                </div>
-                <div class="valid-dates-date">
-                </div>
-                <div class="name">
-                </div>
-            </div>
+            
         </div>
     )
 }
