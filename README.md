@@ -35,6 +35,13 @@
 
 Prueba tecnica para optar al cargo de desarrollador Front-end (React).
 
+La prueba consta de 3 partes:
+
+Parte 1: Disponible dentro del repositorio en la carpera src/doc o dentro de la aplicacion en el home haciendo click sobre "Parte 1".
+
+Parte 2: Ubicada en el home de la aplicacion ("/").
+
+Parte 3: Disponible dentro de la aplicacion en el home haciendo click sobre "Parte 3".
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 
