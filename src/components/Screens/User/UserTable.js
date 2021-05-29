@@ -12,6 +12,9 @@ import createColumnData from "../../../utils/createColumnData";
 import { useDispatch, useSelector } from "react-redux";
 import * as userActions from '../../../store/User/userActions'
 
+import ConfirmationModal from '../../Molecule/Modals/ConfirmationModal'
+
+
 const useStyles = makeStyles((theme) => ({
     content: {
         marginTop: '80px',
@@ -30,6 +33,7 @@ const UserTable = ({ history, match }) => {
 
     const dispatch = useDispatch()
     const users = useSelector(state => state.user.users)
+    const currentUserId = useSelector(state=> state.user.currentUserId)
     const [openDelete, setOpenDelete] = useState(false);
 
     const columns = [
@@ -66,6 +70,9 @@ const UserTable = ({ history, match }) => {
                     :
                     null
             }
+
+            <ConfirmationModal isLoading={users.loading} title={"Eliminar Usuario"} open={openDelete} onClose={() => { setOpenDelete(!openDelete); }} onOk={() => { dispatch(userActions.deleteUser(currentUserId)); setOpenDelete(!openDelete); }} />
+
         </Fragment>
     )
 }

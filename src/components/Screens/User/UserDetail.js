@@ -1,8 +1,9 @@
 import React from 'react'
+import UserInfo from '../../Organism/User/UserInfo'
 
 const UserDetail = () => {
     return (
-        <h1> Hola user detail</h1>
+        <UserInfo />
     )
 }
 

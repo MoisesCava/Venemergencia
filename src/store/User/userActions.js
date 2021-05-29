@@ -31,7 +31,6 @@ export const getUser = (id) => {
         try{
             dispatch({ type: USER_STARTED });
             const response = await API.get(`/users/${id}`)
-            console.log(response);
             dispatch({ type: SET_USER, user: response.data });
 
         }catch (error){
